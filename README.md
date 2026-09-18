@@ -1,113 +1,221 @@
-<div align="center">
+# Bulk Video Downloader
 
-# 🎬 Bulk Video Downloader
+A high-performance desktop application for batch downloading, queuing, and organizing video media from multiple online platforms in original quality without watermarks.
 
-**High-Performance, Enterprise-Grade Desktop Media Download & Queue System**  
-*Download pristine 4K, 1080p, and 60 FPS videos with **100% Original Quality and ZERO Watermarks**.*
-
-[![Release](https://img.shields.io/badge/Release-v1.0.0-blue.svg?style=for-the-badge&logo=github)](https://github.com/HaseebKaloya)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20(x64)-0078D6.svg?style=for-the-badge&logo=windows)](https://github.com/HaseebKaloya)
-[![Engine](https://img.shields.io/badge/Engine-Tauri%202%20%2B%20Rust-DEA584.svg?style=for-the-badge&logo=rust)](https://github.com/HaseebKaloya)
-[![Frontend](https://img.shields.io/badge/UI-React%2019%20%2B%20TS-61DAFB.svg?style=for-the-badge&logo=react)](https://github.com/HaseebKaloya)
-[![Quality](https://img.shields.io/badge/Quality-100%25%20Watermark--Free-00C853.svg?style=for-the-badge&logo=checkmarx)](https://github.com/HaseebKaloya)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE.txt)
-[![Architect](https://img.shields.io/badge/Architect-Haseeb%20Kaloya-purple.svg?style=for-the-badge&logo=github)](https://github.com/HaseebKaloya)
-
-</div>
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/HaseebKaloya)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011%20(x64)-0078D6.svg)](https://github.com/HaseebKaloya)
+[![Engine](https://img.shields.io/badge/backend-Rust%20%2F%20Tauri%202-DEA584.svg)](https://github.com/HaseebKaloya)
+[![Frontend](https://img.shields.io/badge/frontend-React%2019%20%2F%20TypeScript-61DAFB.svg)](https://github.com/HaseebKaloya)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.txt)
+[![Author](https://img.shields.io/badge/author-Haseeb%20Kaloya-5856D6.svg)](https://github.com/HaseebKaloya)
 
 ---
 
-## 📥 Downloads & Latest Release (v1.0.0)
+## Overview
 
-Grab the latest production packages built for Windows 10 and 11 (64-bit):
+Bulk Video Downloader is a native desktop download manager engineered for content creators, media researchers, digital archivists, and video professionals who require reliable, large-scale media acquisition. 
 
-| Distribution Package | Format | File Size | Description | SHA-256 Verification |
+Traditional web-based downloaders are often slow, limited to single URLs, inject compression artifacts, or place intrusive platform watermarks over the source material. Bulk Video Downloader resolves these limitations by executing downloads through a native, multi-threaded pipeline directly on your system, pulling the cleanest available streams at original bitrates up to 4K 60 FPS without added overlays or quality loss.
+
+---
+
+## Downloads (Version 1.0.0)
+
+Pre-built binaries are available for Windows 10 and Windows 11 (64-bit).
+
+| Package | Format | File Size | Target Architecture | SHA-256 Checksum |
 | :--- | :--- | :--- | :--- | :--- |
-| [**Download Setup Installer**](https://github.com/HaseebKaloya/Bulk-Video-Downloader/releases/download/v1.0.0/Bulk-Video-Downloader_1.0.0_x64-setup.exe) | `.exe` | **74.3 MB** | Full Windows Installer with Desktop Shortcut, Start Menu, Startup Registration, and Chrome-Style Foreground WebView2 Downloader | `99B91976DB801D7269B07907B3EFDB43CA2D4248A0AC72038DCE32336CBF6BA2` |
-| [**Download Portable Edition**](https://github.com/HaseebKaloya/Bulk-Video-Downloader/releases/download/v1.0.0/Bulk-Video-Downloader_1.0.0_x64_Portable.zip) | `.zip` | **99.9 MB** | Standalone portable archive. Unpack and run anywhere with zero installation required. Ideal for USB drives. | `C5707E8AC4218428C80B3987C2D91E9AE3C2944BE3E1311934BD1DB09AEE4726` |
-| [**Checksums Manifest**](https://github.com/HaseebKaloya/Bulk-Video-Downloader/releases/download/v1.0.0/checksums.txt) | `.txt` | **359 B** | Official SHA-256 hashes for cryptographic verification | Universal Verification |
+| **Windows Setup Installer** | `.exe` | 74.3 MB | Windows 10 / 11 (x64) | `99B91976DB801D7269B07907B3EFDB43CA2D4248A0AC72038DCE32336CBF6BA2` |
+| **Portable Standalone Edition** | `.zip` | 99.9 MB | Windows 10 / 11 (x64) | `C5707E8AC4218428C80B3987C2D91E9AE3C2944BE3E1311934BD1DB09AEE4726` |
+| **Official Checksums** | `.txt` | 359 B | Universal | Official Hash Manifest |
 
-> [!TIP]
-> **Recommended for standard users:** Download the **Setup Installer** (`.exe`). It installs cleanly to `C:\Program Files\Bulk Video Downloader`, registers uninstallation in Windows Settings, and ensures all dependencies are verified.
-
----
-
-## ⚡ Key Highlights
-
-- **100% Watermark-Free Media:** Downloads clean, pristine video files with zero platform branding, overlays, or stamps from TikTok, Instagram Reels, YouTube, Facebook, Twitter/X, and 1,000+ streaming sites.
-- **Maximum Resolution & Framerates:** Automatic stream discovery for 4K UHD, 2K, 1080p, 60 FPS, HDR, and pure high-bitrate audio extraction (MP3, FLAC, AAC).
-- **Chrome-Style Foreground WebView2 Bootstrapper:** If Microsoft Edge WebView2 runtime is missing on the client's PC, the installer downloads and installs it in the foreground with an official interactive progress dialog (no silent blackouts).
-- **Zero Command Prompt Popups:** Native subprocess execution utilizes Windows `CREATE_NO_WINDOW (0x08000000)`—guaranteeing zero flashing black console windows.
-- **Industrial Queue Engine:** Handle 10,000+ media links smoothly with zero UI latency using TanStack Virtualization.
-- **Atomic File Finalization:** Downloads stream to `.bvd-partial` buffers and atomically swap on checksum completion, guaranteeing no corrupt partial media files.
-- **Crash Recovery & Persistence:** SQLite WAL mode ensures tasks, batches, and progress survive sudden system restarts.
+Direct download links are hosted under the [GitHub Releases](https://github.com/HaseebKaloya/Bulk-Video-Downloader/releases) tab.
 
 ---
 
-## 🏗️ Architecture
+## Installation
 
-```mermaid
-graph TD
-    UI[React 19 + TypeScript Frontend] -->|Tauri 2 IPC Bridge| Core[Rust Native Engine]
-    Core --> DB[(SQLite WAL Database)]
-    Core --> Scheduler[Batch Queue & Worker Pool]
-    Scheduler -->|CREATE_NO_WINDOW| Engines[yt-dlp & FFmpeg Native Binaries]
-    Engines --> Network[Multi-Threaded HTTP Stream]
-    Network --> Partial[Atomic .bvd-partial Buffers]
-    Partial --> Final[Final Media in User Destination]
-```
+### Method 1: Standard Windows Setup Installer (Recommended)
 
----
-
-## 🚀 Quick Start & Installation
-
-### Option 1: Setup Installer (`.exe`)
 1. Download `Bulk-Video-Downloader_1.0.0_x64-setup.exe`.
-2. Run the executable and click **Yes** when Windows UAC prompts for permissions.
-3. Follow the custom-branded setup wizard featuring creator **Haseeb Kaloya**.
-4. The application is now installed to `C:\Program Files\Bulk Video Downloader` and available on your Desktop and Start Menu.
+2. Run the installer and accept the Windows User Account Control (UAC) prompt.
+3. The wizard will install the software to `C:\Program Files\Bulk Video Downloader`, register a Desktop shortcut, add a Start Menu shortcut, and optionally register the app for Windows Startup.
+4. If your system does not already have the Microsoft Edge WebView2 runtime installed, the setup wizard will launch Microsoft's official downloader in the foreground with an active progress bar to complete the environment setup.
 
-### Option 2: Portable Edition (`.zip`)
+### Method 2: Portable Edition
+
 1. Download `Bulk-Video-Downloader_1.0.0_x64_Portable.zip`.
-2. Extract the archive to your desired destination.
-3. Double-click `Bulk Video Downloader.exe` to run immediately.
+2. Extract the contents to any directory or USB drive.
+3. Execute `Bulk Video Downloader.exe` directly. No administrative privileges or installation steps are required.
 
 ### Cryptographic Verification
-Verify the authenticity of your release download in Windows PowerShell:
+
+To verify the integrity and authenticity of the downloaded installer before running, execute the following command in Windows PowerShell:
+
 ```powershell
 Get-FileHash -Algorithm SHA256 "Bulk-Video-Downloader_1.0.0_x64-setup.exe"
-# Expected: 99B91976DB801D7269B07907B3EFDB43CA2D4248A0AC72038DCE32336CBF6BA2
+```
+
+Confirm that the output matches:
+```text
+99B91976DB801D7269B07907B3EFDB43CA2D4248A0AC72038DCE32336CBF6BA2
+```
+
+For the portable archive:
+```powershell
+Get-FileHash -Algorithm SHA256 "Bulk-Video-Downloader_1.0.0_x64_Portable.zip"
+```
+
+Confirm that the output matches:
+```text
+C5707E8AC4218428C80B3987C2D91E9AE3C2944BE3E1311934BD1DB09AEE4726
 ```
 
 ---
 
-## 🛠️ Technology Stack
+## Core Capabilities
 
-| Layer | Technology |
-| :--- | :--- |
-| **Desktop Shell** | [Tauri 2](https://tauri.app) (Windows x64 Native) |
-| **Backend Core** | Rust, Tokio Async, Reqwest, Windows API (`winapi`) |
-| **Database** | SQLite with Write-Ahead Logging (WAL) |
-| **Frontend UI** | React 19, TypeScript, Pure CSS Modules |
-| **State Management** | Zustand |
-| **Virtualization** | TanStack Virtual |
-| **Installer Engine** | NSIS (Nullsoft Scriptable Install System) with Custom DIB 24-bit Branding |
+### Clean Media Extraction Without Watermarks
+- **Original Media Fidelity:** Retrieves raw source video streams without platform-applied branding, moving watermarks, or re-encoding artifacts from supported services including TikTok, YouTube, Instagram Reels, Facebook, and X (Twitter).
+- **Maximum Available Resolutions:** Automatically detects and offers resolutions up to 4K UHD (2160p), 1440p, 1080p, and high frame rates (60 FPS / HDR).
+- **Audio Extraction:** High-bitrate audio stream extraction with conversion options to MP3, FLAC, AAC, or WAV with embedded metadata tags.
 
----
+### Queue and Batch Management
+- **High-Capacity Queue Engine:** Capable of tracking queues containing thousands of items without interface stutter, powered by virtualized list rendering.
+- **Flexible Batch Import:** Accepts bulk URLs via direct text paste, line-separated `.txt` files, structured `.csv` files, or JSON imports, with automatic duplicate link detection.
+- **Configurable Concurrency:** Granular control over the number of simultaneous active downloads (1 to 10 parallel threads) to balance network throughput against CPU and disk usage.
+- **Speed Limits:** Global download rate throttling to prevent saturation of shared internet connections.
 
-## 👤 Product Owner & Architect
+### Atomic File Safety and Resumption
+- **Partial File Buffering:** Active downloads stream directly to dedicated `.bvd-partial` buffers. Files are only renamed to their final destination upon complete, verified transfer, preventing incomplete or corrupt video files in your destination folders.
+- **HTTP Range Resumption:** Interrupted transfers automatically resume from the last received byte when the network reconnects.
+- **Database Persistence:** Download tasks, batches, history, and user preferences are recorded transactionally using an embedded SQLite engine operating in Write-Ahead Logging (WAL) mode. System reboots or unexpected power cuts do not result in database corruption.
 
-**Haseeb Kaloya**  
-- **GitHub:** [@HaseebKaloya](https://github.com/HaseebKaloya)  
-- **Email:** [contact.haseebkaloya@gmail.com](mailto:contact.haseebkaloya@gmail.com)  
-- **Repository:** [https://github.com/HaseebKaloya/Bulk-Video-Downloader](https://github.com/HaseebKaloya/Bulk-Video-Downloader)
-
----
-
-## ⚖️ Legal Disclaimer
-
-*Bulk Video Downloader is intended solely for authorized media workflows, educational purposes, personal archival of user-owned material, and public domain media. It does not bypass DRM, encryption, or digital rights access restrictions. Users are solely responsible for ensuring their usage adheres to local copyright laws and third-party terms of service.*
+### Windows System Integration
+- **Silent Subprocesses:** Background engine processes (such as extraction and stream assembly) are executed using native Windows creation flags (`CREATE_NO_WINDOW`), preventing any flashing command-prompt windows during operation.
+- **Foreground WebView2 Setup:** Modern installer logic detects system components and displays interactive progress dialogs rather than failing silently.
 
 ---
 
-© 2026 **Haseeb Kaloya**. Licensed under the [MIT License](LICENSE.txt).
+## User Guide
+
+### 1. Adding URLs
+- Open the application and click **Import Links** on the dashboard.
+- Paste single or multiple URLs into the input area, or drag-and-drop a `.txt` or `.csv` file containing URLs.
+- The validator parses the links, removes duplicate entries, and presents the detected media list.
+
+### 2. Selecting Download Profiles
+- Choose a target resolution (Best Available, 4K, 1080p, 720p, or Audio Only).
+- Choose the output container (`.mp4`, `.mkv`, or `.mp3`).
+- Select or change the output directory.
+
+### 3. Monitoring Downloads
+- Click **Start Batch** to begin downloading.
+- The main queue displays real-time download speeds, downloaded byte counts, elapsed times, and visual progress indicators for every task.
+- Individual tasks can be paused, resumed, canceled, or prioritized.
+
+### 4. Handling Failures
+- The built-in retry mechanism automatically handles temporary network drops using exponential backoff with randomized jitter.
+- If a link fails due to access restrictions or a deleted source, the task is flagged with the specific reason in the **Failed Tasks** tab for inspection.
+
+---
+
+## Technical Architecture
+
+Bulk Video Downloader utilizes a split-process architecture combining a lightweight native Rust core with a responsive web-rendered interface:
+
+```text
++-------------------------------------------------------------+
+|                     React 19 Frontend                       |
+|           (TypeScript, CSS Modules, Zustand State)           |
++-------------------------------------------------------------+
+                              |
+                     Tauri 2 IPC Bridge
+                              |
++-------------------------------------------------------------+
+|                      Rust Core Engine                       |
+|  - Async Task Scheduler (Tokio Runtime)                     |
+|  - SQLite WAL Database (State & Persistence)                |
+|  - Subprocess Execution (CREATE_NO_WINDOW)                   |
+|  - HTTP Range Streaming & File Integrity                    |
++-------------------------------------------------------------+
+                              |
+               Native Runtime Dependencies
+              (Bundled yt-dlp & FFmpeg x64)
+```
+
+### Technology Stack
+
+| Layer | Component | Notes |
+| :--- | :--- | :--- |
+| **Desktop Shell** | Tauri 2 | Native Windows x64 binary wrapper |
+| **Core Backend** | Rust (v1.75+) | Multi-threaded async runtime with Tokio |
+| **Database** | SQLite (WAL Mode) | Zero-maintenance transactional storage |
+| **UI Framework** | React 19 + TypeScript | Strict typing with component modularity |
+| **Styling** | Pure CSS Modules | Zero Tailwind or heavy utility-CSS dependencies |
+| **State Management** | Zustand | Predictable UI state synchronization |
+| **List Virtualization** | TanStack Virtual | Efficient rendering of large queue tables |
+| **Installer Engine** | NSIS Modern UI 2 | Custom per-machine installer with DIB branding |
+
+---
+
+## System Requirements
+
+| Specification | Minimum Requirement | Recommended |
+| :--- | :--- | :--- |
+| **Operating System** | Windows 10 (Version 19041+) 64-bit | Windows 11 64-bit |
+| **Processor** | Intel Core i3 / AMD Ryzen 3 or equivalent | Intel Core i5 / AMD Ryzen 5 or higher |
+| **Memory (RAM)** | 4 GB RAM | 8 GB RAM (for concurrent 4K multiplexing) |
+| **Available Disk Space** | 300 MB for installation | Fast SSD storage recommended for downloads |
+| **Network** | Broadband internet connection | High-speed fiber connection |
+
+---
+
+## Building from Source
+
+To compile Bulk Video Downloader on your local machine:
+
+### Prerequisites
+1. **Node.js**: v18.0.0 or higher ([nodejs.org](https://nodejs.org))
+2. **Rust**: Rust toolchain with `cargo` ([rustup.rs](https://rustup.rs))
+3. **C++ Build Tools**: Visual Studio 2022 C++ Build Tools with the Windows 10/11 SDK.
+
+### Build Steps
+
+```powershell
+# 1. Clone the repository
+git clone https://github.com/HaseebKaloya/Bulk-Video-Downloader.git
+cd Bulk-Video-Downloader
+
+# 2. Install frontend dependencies
+npm install
+
+# 3. Launch development mode (hot-reloading enabled)
+npm run tauri dev
+
+# 4. Compile a production release (Installer and MSI)
+npm run tauri build
+```
+
+The compiled setup installer and release binaries will be generated under `src-tauri/target/release/bundle/nsis/`.
+
+---
+
+## Author & Project Ownership
+
+- **Product Owner & Lead Developer:** **Haseeb Kaloya**
+- **GitHub:** [@HaseebKaloya](https://github.com/HaseebKaloya)
+- **Email Contact:** [contact.haseebkaloya@gmail.com](mailto:contact.haseebkaloya@gmail.com)
+- **Project Repository:** [https://github.com/HaseebKaloya/Bulk-Video-Downloader](https://github.com/HaseebKaloya/Bulk-Video-Downloader)
+
+---
+
+## Compliance and Authorized Use
+
+Bulk Video Downloader is intended strictly for authorized workflows, educational media preservation, personal backups of user-owned content, and open media in the public domain. This software does not bypass digital rights management (DRM), access control systems, or paywalled content. Users are solely responsible for ensuring that their media activities comply with applicable intellectual property laws and the terms of service of each respective host platform.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
