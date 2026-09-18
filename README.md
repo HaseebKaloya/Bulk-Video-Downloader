@@ -19,6 +19,30 @@ Traditional web-based downloaders are often slow, limited to single URLs, inject
 
 ---
 
+## Application Interface
+
+### Active Download Operations & Stream Orchestration
+The primary control dashboard displays real-time aggregate speed monitoring, worker allocation, batch throughput, and live per-task stream telemetry:
+
+![Bulk Video Downloader - Active Control Dashboard](screenshots/dashboard.png)
+
+### Multi-Stream Download Queue & Task Management
+Granular control over queued tasks, progress percentages, active transfer rates, estimated remaining times, and priority ordering:
+
+![Bulk Video Downloader - Download Queue Manager](screenshots/downloads.png)
+
+### Engine Configuration & Hardware Diagnostics
+Centralized configuration for concurrency limits, completion policies, automatic retry thresholds, and native backend engine diagnostics (bundled yt-dlp and FFmpeg):
+
+![Bulk Video Downloader - Engine Settings & Diagnostics](screenshots/settings.png)
+
+### System Architecture & Engineering Profile
+Runtime specifications, transactional SQLite WAL database metrics, and developer profile:
+
+![Bulk Video Downloader - About & Developer Profile](screenshots/about.png)
+
+---
+
 ## Downloads (Version 1.0.0)
 
 Pre-built binaries are available for Windows 10 and Windows 11 (64-bit).
