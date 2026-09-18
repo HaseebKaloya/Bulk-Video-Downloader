@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.track {
+  width: 100%;
+  background-color: var(--bg-surface-muted);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: var(--accent-primary);
+  border-radius: var(--radius-xs);
+  transition: width 0.2s ease;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.percentage {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.speed {
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+.eta {
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,76 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  border-radius: var(--radius-xs);
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.sm {
+  padding: 2px 6px;
+  font-size: 11px;
+}
+
+.md {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Status colors */
+.queued,
+.ready,
+.draft {
+  background-color: var(--bg-surface-muted);
+  color: var(--text-secondary);
+}
+
+.preparing,
+.downloading,
+.active {
+  background-color: var(--accent-primary-soft);
+  color: var(--accent-primary);
+}
+
+.pausing,
+.paused {
+  background-color: var(--warning-soft);
+  color: var(--warning);
+}
+
+.retry_wait,
+.stopping {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.finalizing,
+.completed {
+  background-color: var(--success-soft);
+  color: var(--success);
+}
+
+.failed {
+  background-color: var(--danger-soft);
+  color: var(--danger);
+}
+
+.cancelled,
+.skipped {
+  background-color: var(--bg-surface-muted);
+  color: var(--text-tertiary);
+}
+
+.default {
+  background-color: var(--bg-surface-muted);
+  color: var(--text-secondary);
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Bulk Video Downloader",
+  "version": "1.0.0",
+  "identifier": "com.haseebkaloya.bulk-video-downloader",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Bulk Video Downloader",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 960,
+        "minHeight": 640,
+        "center": true,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Haseeb Kaloya",
+    "homepage": "https://github.com/HaseebKaloya",
+    "copyright": "Copyright © 2026 Haseeb Kaloya",
+    "licenseFile": "../LICENSE.txt",
+    "shortDescription": "High-Performance Bulk Video Downloader — Clean & Without Watermark",
+    "longDescription": "Bulk Video Downloader is an enterprise-grade desktop application engineered by Haseeb Kaloya (https://github.com/HaseebKaloya). Download videos from YouTube, TikTok (clean without moving watermarks), Instagram Reels, X/Twitter, and direct streams with multi-threaded resume.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "bin/*"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": false
+      },
+      "nsis": {
+        "sidebarImage": "installer-sidebar.bmp",
+        "installerIcon": "icons/icon.ico",
+        "installerHooks": "hooks.nsh",
+        "installMode": "perMachine"
+      }
+    }
+  }
+}

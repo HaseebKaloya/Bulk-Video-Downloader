@@ -1,0 +1,287 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroCard {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.heroIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+}
+
+.heroLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.iconAccent {
+  color: var(--accent-primary);
+}
+
+.heroTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.heroSubtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.5;
+}
+
+.heroMetaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.versionBadge {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--bg-surface-muted);
+  color: var(--text-secondary);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-default);
+}
+
+.developerBadgeTag {
+  font-size: 11px;
+  background-color: var(--accent-primary-soft);
+  color: var(--accent-primary);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.developerBadgeTag strong {
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.authorSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.authorAvatarWrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  padding: 2.5px;
+  background: linear-gradient(135deg, var(--accent-primary), #6366f1, #38bdf8);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.authorAvatarWrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.32);
+}
+
+.authorPhoto {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--bg-surface);
+}
+
+.authorStatusBadge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #10b981;
+  border: 2px solid var(--bg-surface);
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.authorNameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.authorName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.designerBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 9999px;
+  background-color: var(--accent-primary-soft);
+  color: var(--accent-primary);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.authorRole {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--accent-primary);
+  text-decoration: none;
+  padding: var(--space-1) 0;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.extIcon {
+  color: var(--text-tertiary);
+}
+
+.principlesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.principlesList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.principlesList strong {
+  color: var(--text-primary);
+}
+
+.bulletIcon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.complianceCard {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.complianceHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.complianceIcon {
+  color: var(--text-secondary);
+}
+
+.complianceTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.complianceText {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.aboutFooter {
+  text-align: center;
+  padding: var(--space-4) 0;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border-default);
+  margin-top: var(--space-2);
+}
+
+.aboutFooter strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
