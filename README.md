@@ -1,5 +1,7 @@
 # Bulk Video Downloader
 
+![Bulk Video Downloader — Engineered by Haseeb Kaloya](public/social-preview.png)
+
 A high-performance desktop application for batch downloading, queuing, and organizing video media from multiple online platforms in original quality without watermarks.
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/HaseebKaloya)
