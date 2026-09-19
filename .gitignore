@@ -1,5 +1,37 @@
-# Logs
-logs
+# ==========================================
+# Bulk Video Downloader - Repository Ignore
+# Author: Haseeb Kaloya (https://github.com/HaseebKaloya)
+# ==========================================
+
+# 1. Tauri & Rust Compilation Artifacts
+src-tauri/target/
+target/
+**/*.rs.bk
+
+# 2. Large External Binaries (>100MB GitHub limit) & Release Packages
+src-tauri/bin/*.exe
+bin/*.exe
+releases/
+backup_unused_files/
+*.exe
+*.msi
+*.zip
+*.tar.gz
+*.7z
+*.rar
+*.pdb
+*.dll
+
+# 3. Node Dependencies & Frontend Build Output
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm/
+.eslintcache
+
+# 4. Logs & Debug Records
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,34 +39,33 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Tauri & Rust build artifacts
-src-tauri/target/
-releases/
-backup_unused_files/
+# 5. Local Application State & Transient Download Files
+*.bvd-partial
+*.part
+*.ytdl
+*.sqlite-wal
+*.sqlite-shm
 
-# Large binaries (>100MB blocked by GitHub)
-src-tauri/bin/*.exe
-bin/*.exe
-*.exe
-*.msi
-*.zip
-*.tar.gz
+# 6. Environment & Secret Configuration
+.env
+.env.*
+!.env.example
 
-
-# Node
-node_modules/
-dist/
-dist-ssr/
-*.local
-
-# Editor directories and files
+# 7. Operating System & IDE Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
+*.swo
+*.swp
+*.user
